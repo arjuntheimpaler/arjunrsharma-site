@@ -1,0 +1,62 @@
+title: Local SEO
+parent: organic-search
+order: 4
+draft: false
+card_summary: Google Business Profile, listings, location pages and reviews — get found in the map pack.
+seo:
+  meta_title: Local SEO Services | Google Business Profile & Map Pack — Arjun R Sharma
+  meta_description: Local SEO help for single and multi-location brands — Google Business Profile, NAP consistency, location pages and review strategy to win the map pack.
+  noindex: false
+schema:
+  page_type: WebPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Organic Search · Local SEO
+  heading: Get found by people nearby.
+  subheading: Location pages, listings, citations and reviews that get single-market and multi-location brands into the map pack and local results.
+  primary_label: Get Local SEO help
+  primary_link: '#enquire'
+  secondary_label: Read the Local SEO basics
+  secondary_link: /blog/local-seo-basics-that-still-get-ignored/
+sections:
+  - type: text
+    heading: What is Local SEO?
+    body: |-
+      **Local SEO** helps a business appear when people search for something nearby — "dentist near me", "SEO agency in Mumbai", or a brand name plus a city.
+
+      Most local SEO problems aren't exotic. They're an unclaimed listing, inconsistent business details, thin location pages, or no review strategy. Fixing those, in the right order, beats almost any "advanced" tactic.
+  - type: steps
+    heading: The order I fix things in
+    items:
+      - title: Google Business Profile
+        body: Claimed, verified, in the right category, and complete — the single highest-leverage fix for most local businesses.
+      - title: NAP consistency
+        body: Name, address and phone matching exactly across your site, profile and every directory.
+      - title: Location pages
+        body: Pages that say something real about each location — service area, team, hours, local proof.
+      - title: Reviews
+        body: A system for getting reviews and actually responding to them.
+  - type: cards
+    heading: Who it's for
+    items:
+      - title: Multi-location brands
+        body: Branches, stores, clinics or franchises that need every location to show up in its own market.
+      - title: Single-market businesses
+        body: Service businesses competing for the same few local searches every day.
+      - title: Service-area businesses
+        body: Businesses that travel to customers and need to be found across a region.
+faq:
+  heading: Local SEO FAQs
+  items:
+    - question: What is the map pack?
+      answer: The block of usually three local business listings with a map that Google shows for local searches. It typically gets a large share of clicks for local queries.
+    - question: Do I need a separate page for each location?
+      answer: If you have multiple locations, yes — but each page needs genuinely local information, not the homepage copy with the city name swapped.
+    - question: How much do reviews matter?
+      answer: A lot. Review count, how recent they are and whether you respond all signal to Google — and to customers — that the business is active and trustworthy.
+form:
+  enabled: true
+  heading: Get help with Local SEO
+  intro: Tell me how many locations you have and where you want to show up.
+  service_name: Local SEO
+  button_label: Send enquiry

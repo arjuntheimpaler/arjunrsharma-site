@@ -1,0 +1,37 @@
+---
+// Shared article layout for blog posts, case studies and videos
+import Faq from './Faq.astro';
+import { youtubeId, link, getSettings, md } from '../lib/utils';
+const { data, eyebrow, meta, showVideo = true } = Astro.props;
+const settings = await getSettings();
+const vid = youtubeId(data.youtube_url);
+const cta = settings.article_cta;
+---
+<article class="article">
+  <header class="wrap narrow article-head">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{data.title}</h1>
+    {meta && <p class="hero-meta" set:html={meta} />}
+    {(data.description || data.summary) && <p class="lede">{data.description || data.summary}</p>}
+    {data.tags?.length > 0 && <ul class="tags">{data.tags.map((t: string) => <li>{t}</li>)}</ul>}
+  </header>
+
+  {showVideo && vid ? (
+    <div class="wrap narrow"><div class="video"><iframe src={`https://www.youtube-nocookie.com/embed/${vid}`} title={data.title} allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+  ) : data.hero_image ? (
+    <figure class="wrap narrow article-img"><img src={data.hero_image} alt={data.hero_image_alt || data.title} loading="eager" fetchpriority="high" /></figure>
+  ) : null}
+
+  <slot name="before" />
+  <div class="wrap narrow prose article-body"><slot /></div>
+</article>
+<Faq faq={data.faq} />
+{cta?.heading && (
+  <section class="section cta-section">
+    <div class="wrap"><div class="cta-box">
+      <h2>{cta.heading}</h2>
+      {cta.body && <div set:html={md(cta.body)} />}
+      {cta.button_label && <a class="btn btn-light" href={link(cta.button_link)}>{cta.button_label}</a>}
+    </div></div>
+  </section>
+)}

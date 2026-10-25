@@ -1,0 +1,30 @@
+---
+import { formatDate, youtubeId, youtubeThumb } from '../lib/utils';
+const { entry, kind } = Astro.props as { entry: any; kind: 'blog' | 'case-studies' | 'videos' };
+const d = entry.data;
+const href = `/${kind}/${entry.id}/`;
+const vid = youtubeId(d.youtube_url);
+const thumb = kind === 'videos' ? d.thumbnail || (vid ? youtubeThumb(vid) : null) : d.hero_image;
+const thumbAlt = kind === 'videos' ? d.thumbnail_alt || d.title : d.hero_image_alt || d.title;
+const blurb = d.description ?? d.summary;
+const label = kind === 'case-studies' ? [d.industry, d.client_label].filter(Boolean).join(' · ') : formatDate(d.pubDate);
+---
+<article class:list={['card entry-card', `entry-${kind}`]}>
+  {thumb && (
+    <a href={href} class="entry-thumb" tabindex="-1" aria-hidden="true">
+      <img src={thumb} alt={thumbAlt} loading="lazy" />
+      {kind === 'videos' && <span class="play" aria-hidden="true">▶</span>}
+    </a>
+  )}
+  <div class="entry-body">
+    {label && <p class="entry-meta">{label}{kind === 'videos' && d.duration ? ` · ${d.duration}` : ''}</p>}
+    <h3><a href={href}>{d.title}</a></h3>
+    {blurb && <p>{blurb}</p>}
+    {kind === 'case-studies' && d.results?.length > 0 && (
+      <ul class="mini-stats">
+        {d.results.slice(0, 3).map((r: any) => <li><strong>{r.value}</strong> {r.metric}</li>)}
+      </ul>
+    )}
+    {d.tags?.length > 0 && <ul class="tags">{d.tags.map((t: string) => <li>{t}</li>)}</ul>}
+  </div>
+</article>

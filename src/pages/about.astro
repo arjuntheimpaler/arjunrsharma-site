@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageBody from '../components/PageBody.astro';
+import { getPage } from '../lib/utils';
+const page = await getPage('about');
+---
+<BaseLayout title={page.title} seo={page.seo} schema={page.schema} faq={page.faq?.items} image={page.hero?.image} imageAlt={page.hero?.image_alt} pageType="AboutPage" crumbs={[{ name: 'Home', path: '/' }, { name: page.title, path: '/about/' }]}>
+  <PageBody page={page} />
+</BaseLayout>

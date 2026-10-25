@@ -1,0 +1,21 @@
+---
+import { md } from '../lib/utils';
+const { faq } = Astro.props;
+const items = faq?.items ?? [];
+---
+{items.length > 0 && (
+  <section class="section faq" id="faq">
+    <div class="wrap narrow">
+      <h2>{faq.heading || 'Frequently asked questions'}</h2>
+      {faq.intro && <p class="section-intro">{faq.intro}</p>}
+      <div class="accordion">
+        {items.map((q: any) => (
+          <details>
+            <summary><h3>{q.question}</h3></summary>
+            <div class="prose" set:html={md(q.answer)} />
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

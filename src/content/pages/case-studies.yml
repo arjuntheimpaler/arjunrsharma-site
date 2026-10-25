@@ -1,0 +1,38 @@
+title: Case Studies
+seo:
+  meta_title: Case Studies & Work — Arjun R Sharma
+  meta_description: A record of Arjun R Sharma's organic growth marketing work — case studies, roles, and the brands worked with along the way.
+  noindex: false
+schema:
+  page_type: CollectionPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Case Studies
+  heading: Where I've worked, and on what.
+  subheading: The work behind the writing — what the problem was, what I did, and what it moved.
+sections:
+  - type: timeline
+    heading: Experience
+    items:
+      - period: 2025 — Present
+        role: Growth Marketing Lead
+        company: Jump Content (Dimerse)
+        body: Leading organic growth marketing across a portfolio of client accounts.
+        clients: CFO Bridge, CFOSME, PSA India, MakeMyTrip, Blooming Orchid
+      - period: '2024'
+        role: SEO Specialist, BFSI
+        company: Puretech
+        body: Focused on banking, financial services, and insurance clients.
+        clients: HDFC Bank, QI Spine, Mirae Asset
+      - period: 2022 — 2024
+        role: SEO Specialist, Southeast Asia
+        company: Performics
+        body: Managed regional SEO across FMCG and consumer portfolios.
+        clients: Mars Petcare, Centrum
+  - type: logos
+    heading: Brands I've worked with
+    items: [Mars Petcare, Pedigree, IAMS, Whiskas, HDFC Bank, MakeMyTrip, Airtel, Mirae Asset, PSA India, CFO Bridge, Centrum, QI Spine]
+faq:
+  items: []
+form:
+  enabled: false

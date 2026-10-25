@@ -1,0 +1,36 @@
+title: FAQ
+seo:
+  meta_title: FAQ | SEO, GEO, AEO & Local SEO Questions — Arjun R Sharma
+  meta_description: Straight answers to common questions about SEO, AEO, GEO, Local SEO, personal branding, and how to get help.
+  noindex: false
+schema:
+  page_type: FAQPage
+  custom_jsonld: ''
+hero:
+  eyebrow: FAQ
+  heading: Questions people usually ask.
+  subheading: Short, honest answers. If yours isn't here, [ask me directly](/contact/).
+sections: []
+faq:
+  heading: General questions
+  intro: ''
+  items:
+    - question: What's the difference between SEO, AEO and GEO?
+      answer: |-
+        **SEO** (search engine optimization) is about ranking in traditional search results. **AEO** (answer engine optimization) is about being the direct answer — featured snippets, "People also ask", voice answers. **GEO** (generative engine optimization) is about being cited or summarised inside AI-generated answers such as Google's AI Overviews and ChatGPT.
+
+        They share the same foundations: a crawlable site, clear structure and genuinely useful content. AEO and GEO change *what you optimise for*, not the basics.
+    - question: How long does SEO take to show results?
+      answer: It depends on the site's starting point, competition and how much work gets shipped. As a rough guide, technical fixes can show impact within weeks, while content and authority usually take several months to compound. Organic growth should be planned against a realistic timeline, not a single quarter.
+    - question: Is SEO still worth it now that AI answers are everywhere?
+      answer: Yes — but the goal is shifting from "ranking" to "being the source". AI systems still need to crawl, understand and trust your content before they quote it. The brands that structure content clearly and publish original information are the ones getting cited.
+    - question: What is Local SEO and who needs it?
+      answer: Local SEO helps a business show up in the map pack and local results for searches like "near me" or "[service] in [city]". Any business that serves customers in specific locations — clinics, stores, branches, service-area businesses — needs it.
+    - question: What does personal branding have to do with SEO?
+      answer: When someone searches your name, what they find shapes their first impression. Personal branding work makes sure the right things show up — your own site, a strong LinkedIn presence, your writing and talks — and that search engines and AI tools understand who you are and what you're known for.
+    - question: How do I get help with a specific service?
+      answer: Go to the relevant [service page](/services/), read how I approach it, and fill in the short form at the bottom. Tell me about your site and what you're trying to achieve, and I'll get back to you by email.
+    - question: Can I just ask a question without hiring anyone?
+      answer: Of course. The service pages are also there to help people understand each service. If something isn't clear, [send me a message](/contact/).
+form:
+  enabled: false

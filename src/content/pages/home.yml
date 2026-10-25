@@ -1,0 +1,81 @@
+title: Home
+seo:
+  meta_title: Arjun R Sharma | Organic Growth Marketer (SEO, GEO, AEO, Local SEO)
+  meta_description: Arjun R Sharma is an organic growth marketer working across FMCG, BFSI, travel, and B2B. Portfolio and writing on SEO, Local SEO, GEO, and AEO.
+  canonical: ''
+  noindex: false
+  og_title: Arjun R Sharma
+  og_description: Organic growth marketer. Writing about SEO, Local SEO, GEO, and AEO.
+  og_image: ''
+  og_image_alt: ''
+schema:
+  page_type: WebPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Organic Growth Marketer
+  heading: Organic growth marketer. Writing about SEO, Local SEO, GEO, and AEO.
+  subheading: Four years of agency-side SEO and growth marketing across FMCG, BFSI, Travel, B2B. This is where I keep a record of the work and write about what's actually changing in search — Local SEO, GEO, AEO, and organic growth in general.
+  image: ''
+  image_alt: ''
+  primary_label: Read the blog
+  primary_link: /blog/
+  secondary_label: How I can help
+  secondary_link: /services/
+sections:
+  - type: logos
+    heading: Brands I've worked with
+    items: [Mars Petcare, Pedigree, IAMS, Whiskas, HDFC Bank, MakeMyTrip, Airtel, Mirae Asset, PSA India, CFO Bridge, Centrum, QI Spine]
+  - type: cards
+    heading: What I write and work on
+    intro: ''
+    items:
+      - title: Organic growth strategy
+        body: Turning SEO from a checklist into an actual growth channel — tied to traffic that compounds, not traffic that stops the moment spend stops.
+        link: /services/organic-search/
+        link_label: Organic Search
+      - title: Local SEO
+        body: Location pages, listings, and citations that get multi-location and single-market brands found in the map pack and local results.
+        link: /services/organic-search/local-seo/
+        link_label: Local SEO
+      - title: GEO (Generative Engine Optimization)
+        body: Structuring content and entities so brands show up inside AI Overviews, ChatGPT, and other generative answer engines — not just the traditional ten blue links.
+        link: /services/organic-search/geo/
+        link_label: GEO
+      - title: AEO (Answer Engine Optimization)
+        body: Writing and structuring content to directly answer the question being asked, so it gets pulled into featured snippets and AI-generated answers.
+        link: /services/organic-search/aeo/
+        link_label: AEO
+      - title: Website builds & migrations
+        body: Working with dev and design teams so sites ship fast and crawlable from day one, and don't lose organic equity during a migration or replatform.
+        link: /services/organic-search/seo/
+        link_label: SEO
+      - title: Site management
+        body: The ongoing, less glamorous side of SEO — technical health, content upkeep, and making sure a site keeps earning traffic long after launch.
+        link: /services/organic-search/seo/
+        link_label: SEO
+  - type: latest
+    heading: Recent posts
+    source: blog
+    count: 3
+    link_label: All posts
+  - type: latest
+    heading: Latest videos
+    source: videos
+    count: 3
+    link_label: All videos
+  - type: latest
+    heading: Case studies
+    source: case-studies
+    count: 3
+    link_label: All case studies
+  - type: cta
+    heading: Want to talk shop, or just say hi?
+    body: I'm easiest to reach by email — or tell me what you're working on and I'll get back to you.
+    button_label: Get in touch
+    button_link: /contact/
+faq:
+  heading: ''
+  intro: ''
+  items: []
+form:
+  enabled: false

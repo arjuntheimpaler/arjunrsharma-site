@@ -1,0 +1,68 @@
+title: SEO
+parent: organic-search
+order: 1
+draft: false
+card_summary: Technical health, site structure and content mapped to real intent — the foundation everything else sits on.
+seo:
+  meta_title: SEO Services | Technical SEO, Content & Migrations — Arjun R Sharma
+  meta_description: SEO help for brands that want traffic that compounds — technical SEO, site architecture, content strategy, and site migrations done without losing rankings.
+  noindex: false
+schema:
+  page_type: WebPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Organic Search · SEO
+  heading: SEO that turns into a growth channel, not a checklist.
+  subheading: Technical health, site structure and content mapped to real search intent — so your site earns traffic that keeps compounding.
+  primary_label: Get SEO help
+  primary_link: '#enquire'
+  secondary_label: All organic search services
+  secondary_link: /services/organic-search/
+sections:
+  - type: text
+    heading: What SEO actually is
+    body: |-
+      Search engine optimization is the work of making a website easy for search engines to **crawl, understand and trust** — and genuinely useful for the people who land on it.
+
+      It's not about stuffing keywords. Good SEO is a crawlable, fast site; content that matches what people are actually searching for; and a structure that makes the important pages obvious.
+  - type: cards
+    heading: What I help with
+    items:
+      - title: Technical SEO
+        body: Crawlability, indexation, site speed, Core Web Vitals, structured data, and fixing the issues that quietly cap your traffic.
+      - title: Site architecture & internal linking
+        body: A structure that makes your most important pages obvious to users and search engines alike.
+      - title: Content strategy
+        body: Topics and pages mapped to real intent — not just keyword volume — so traffic actually converts.
+      - title: Migrations & replatforms
+        body: Redirect mapping, pre-launch checks and post-launch monitoring, so you don't lose years of organic equity overnight.
+      - title: Website builds
+        body: Working with dev and design so a new site ships fast and crawlable from day one.
+      - title: Ongoing site management
+        body: The less glamorous upkeep — technical health, content refreshes, and keeping a site earning after launch.
+  - type: steps
+    heading: How an SEO engagement usually runs
+    items:
+      - title: Audit
+        body: Technical, content and competitor review focused on what's actually holding the site back.
+      - title: Prioritised plan
+        body: A short, ordered list of fixes and opportunities, sized by impact and effort.
+      - title: Implementation
+        body: Working with your team (or directly) to get changes live.
+      - title: Reporting that matters
+        body: Traffic, leads and revenue from organic — not vanity rankings.
+faq:
+  heading: SEO FAQs
+  items:
+    - question: How long does SEO take?
+      answer: Technical fixes can show impact within weeks. Content and authority usually take several months to build. Anyone promising page-one rankings in 30 days is selling something else.
+    - question: Will a website migration hurt my rankings?
+      answer: It can, if redirects, URLs and content aren't handled carefully. Done properly — with a full redirect map, pre-launch checks and monitoring — most migrations hold or improve their organic traffic.
+    - question: Do I need technical SEO if my content is good?
+      answer: Yes. If search engines can't crawl, render or index your pages properly, even great content won't rank.
+form:
+  enabled: true
+  heading: Get help with SEO
+  intro: Share your site and what you're trying to achieve — an audit, a migration, a content plan, or just a second opinion.
+  service_name: SEO
+  button_label: Send enquiry

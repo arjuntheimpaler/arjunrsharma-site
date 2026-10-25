@@ -1,0 +1,52 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EntryArticle from '../../components/EntryArticle.astro';
+import { getPosts, formatDate, SITE, abs, youtubeId, youtubeThumb } from '../../lib/utils';
+import { videoNode } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  return (await getPosts()).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const url = new URL(`/blog/${entry.id}/`, SITE).toString();
+const vid = youtubeId(d.youtube_url);
+const image = d.hero_image || (vid ? youtubeThumb(vid) : undefined);
+const video = d.youtube_url ? videoNode({ url, name: d.title, description: d.description, youtube: d.youtube_url, uploadDate: d.pubDate }) : undefined;
+const posting = {
+  '@type': d.schema?.page_type === 'Article' ? 'Article' : 'BlogPosting',
+  '@id': `${url}#article`,
+  headline: d.title,
+  description: d.description,
+  datePublished: d.pubDate.toISOString(),
+  dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
+  author: { '@id': `${SITE}/#person` },
+  publisher: { '@id': `${SITE}/#person` },
+  mainEntityOfPage: { '@id': `${url}#webpage` },
+  image: abs(image),
+  keywords: d.tags?.length ? d.tags.join(', ') : undefined,
+  video: video ? { '@id': video['@id'] } : undefined,
+  inLanguage: 'en-IN',
+};
+const meta = `<time datetime="${d.pubDate.toISOString()}">${formatDate(d.pubDate)}</time>` +
+  (d.updatedDate ? ` · Updated <time datetime="${d.updatedDate.toISOString()}">${formatDate(d.updatedDate)}</time>` : '') +
+  ` · By <a href="/about/">Arjun R Sharma</a>`;
+---
+<BaseLayout
+  title={d.title}
+  description={d.description}
+  seo={d.seo}
+  schema={{ ...d.schema, page_type: null }}
+  faq={d.faq?.items}
+  image={image}
+  imageAlt={d.hero_image_alt}
+  ogType="article"
+  publishedTime={d.pubDate}
+  modifiedTime={d.updatedDate ?? d.pubDate}
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog/' }, { name: d.title, path: `/blog/${entry.id}/` }]}
+  extraNodes={[posting, video]}
+>
+  <EntryArticle data={d} meta={meta}><Content /></EntryArticle>
+</BaseLayout>

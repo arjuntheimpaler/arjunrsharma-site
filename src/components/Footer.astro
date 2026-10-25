@@ -1,0 +1,31 @@
+---
+import { link } from '../lib/utils';
+const { settings } = Astro.props;
+const f = settings.footer ?? {};
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">{(settings.site_name || 'A').charAt(0)}</span>
+        <span class="brand-name">{settings.site_name}</span>
+      </a>
+      {f.blurb && <p>{f.blurb}</p>}
+      {settings.email && <p><a href={`mailto:${settings.email}`}>{settings.email}</a></p>}
+    </div>
+    {(f.columns ?? []).map((col: any) => (
+      <div>
+        <h2 class="footer-h">{col.heading}</h2>
+        <ul>
+          {(col.links ?? []).map((l: any) => (
+            <li><a href={link(l.link)} {...(/^https?:/.test(l.link) ? { rel: 'noopener', target: '_blank' } : {})}>{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <div class="wrap footer-base">
+    <p>© {year} {f.copyright || settings.site_name}</p>
+  </div>
+</footer>

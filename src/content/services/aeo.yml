@@ -1,0 +1,64 @@
+title: AEO
+parent: organic-search
+order: 2
+draft: false
+card_summary: Answer Engine Optimization — structure content to become the direct answer in snippets, PAA and AI answers.
+seo:
+  meta_title: AEO Services | Answer Engine Optimization — Arjun R Sharma
+  meta_description: Answer engine optimization (AEO) help — structure content and schema so your brand becomes the direct answer in featured snippets, People Also Ask and AI answers.
+  noindex: false
+schema:
+  page_type: WebPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Organic Search · AEO
+  heading: Be the answer, not just a result.
+  subheading: Answer Engine Optimization structures your content so it gets pulled into featured snippets, "People also ask", voice assistants and AI-generated answers.
+  primary_label: Get AEO help
+  primary_link: '#enquire'
+  secondary_label: All organic search services
+  secondary_link: /services/organic-search/
+sections:
+  - type: text
+    heading: What is AEO?
+    body: |-
+      **Answer Engine Optimization (AEO)** is the practice of writing and structuring content so it directly answers the question someone asked — clearly enough that a search engine or AI assistant can lift that answer and show it.
+
+      Where SEO asks "can this page rank?", AEO asks "is this page the clearest answer to the question?". The two work together: AEO builds on a technically sound, well-structured site.
+  - type: cards
+    heading: What I help with
+    items:
+      - title: Question research
+        body: Finding the real questions your audience asks — from search data, People Also Ask, forums and sales conversations.
+      - title: Answer-first content
+        body: Restructuring pages so the direct answer comes first, followed by the depth and context.
+      - title: Structured data
+        body: FAQ, HowTo, Article, Product and other schema.org markup so machines understand exactly what each page says.
+      - title: Snippet and PAA targeting
+        body: Formatting answers — definitions, lists, tables, steps — to match the result types that show up for each query.
+  - type: steps
+    heading: How I approach AEO
+    items:
+      - title: Map the questions
+        body: Group the questions your audience asks by intent and by the page that should answer them.
+      - title: Answer clearly
+        body: Put the direct, factual answer near the top. Then add depth.
+      - title: Mark it up
+        body: Add the right structured data and a clean heading structure.
+      - title: Track visibility
+        body: Monitor snippets, PAA and AI answers, not only rankings.
+faq:
+  heading: AEO FAQs
+  items:
+    - question: Is AEO different from SEO?
+      answer: AEO is a layer on top of SEO. It uses the same foundations but optimises for being the extracted answer, rather than just a ranked link.
+    - question: Does FAQ schema still help?
+      answer: Google shows FAQ rich results for far fewer sites than it used to, but clear question-and-answer structure and schema still help search engines and AI systems understand and extract your content.
+    - question: What kind of content works best for AEO?
+      answer: Content that answers a specific question directly and accurately — definitions, how-tos, comparisons, and pages built around a single clear question.
+form:
+  enabled: true
+  heading: Get help with AEO
+  intro: Tell me which questions you want to own, or share your site and I'll take a look.
+  service_name: AEO
+  button_label: Send enquiry

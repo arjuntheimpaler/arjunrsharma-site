@@ -1,0 +1,30 @@
+title: Services
+seo:
+  meta_title: Services | Organic Search & Personal Branding — Arjun R Sharma
+  meta_description: Help with organic search (SEO, AEO, GEO, Local SEO) and personal branding. Understand the service, then tell me what you need.
+  noindex: false
+schema:
+  page_type: CollectionPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Services
+  heading: Help for people who want to be found.
+  subheading: Whether you need a hand with a service or just want to understand it properly, start here. Every service page explains what it is, how I approach it, and has a short form if you'd like to talk.
+sections:
+  - type: service_cards
+    heading: Where I can help
+    intro: ''
+    parent: ''
+  - type: service_cards
+    heading: Organic Search, broken down
+    intro: Organic Search covers four disciplines that work best together.
+    parent: organic-search
+    style: tinted
+faq:
+  items: []
+form:
+  enabled: true
+  heading: Not sure which one you need?
+  intro: Tell me a bit about your site or goal and I'll point you in the right direction.
+  service_name: Services (general)
+  button_label: Send enquiry

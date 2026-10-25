@@ -1,0 +1,27 @@
+---
+import { link, mdInline } from '../lib/utils';
+const { hero = {}, fallbackTitle, meta, compact = false } = Astro.props;
+const h = hero ?? {};
+---
+<section class:list={['hero', { 'hero-compact': compact, 'hero-has-img': h.image }]}>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      {h.eyebrow && <p class="eyebrow">{h.eyebrow}</p>}
+      <h1>{h.heading || fallbackTitle}</h1>
+      {meta && <p class="hero-meta"><Fragment set:html={meta} /></p>}
+      {h.subheading && <p class="lede" set:html={mdInline(h.subheading)} />}
+      {(h.primary_label || h.secondary_label) && (
+        <div class="actions">
+          {h.primary_label && <a class="btn" href={link(h.primary_link)}>{h.primary_label}</a>}
+          {h.secondary_label && <a class="btn btn-ghost" href={link(h.secondary_link)}>{h.secondary_label}</a>}
+        </div>
+      )}
+      <slot />
+    </div>
+    {h.image && (
+      <div class="hero-media">
+        <img src={h.image} alt={h.image_alt || h.heading || fallbackTitle} loading="eager" fetchpriority="high" />
+      </div>
+    )}
+  </div>
+</section>

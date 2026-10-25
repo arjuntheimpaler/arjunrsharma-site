@@ -1,0 +1,90 @@
+title: Organic Search
+parent: ''
+order: 1
+draft: false
+card_summary: SEO, AEO, GEO and Local SEO — one organic strategy built for traffic that lasts.
+seo:
+  meta_title: Organic Search Services | SEO, AEO, GEO & Local SEO — Arjun R Sharma
+  meta_description: Organic search help across SEO, AEO, GEO and Local SEO. Understand how each works, and get help building traffic that compounds.
+  noindex: false
+schema:
+  page_type: WebPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Organic Search
+  heading: Traffic you own, not traffic you rent.
+  subheading: Organic search is no longer just "ranking on Google". It's being found in classic results, being the direct answer, being cited by AI, and showing up on the map. I help brands do all four — as one strategy, not four separate projects.
+  primary_label: Talk to me
+  primary_link: '#enquire'
+  secondary_label: Read the blog
+  secondary_link: /blog/
+sections:
+  - type: text
+    heading: Why organic search, and why now
+    body: |-
+      Paid channels stop the moment you stop paying. A well-built page can keep earning clicks for years, and every good page compounds on the ones before it.
+
+      At the same time, search is changing. AI Overviews, ChatGPT and other answer engines now decide whether a click happens at all. That doesn't make SEO less important — it makes *structure, clarity and original information* matter more than ever.
+  - type: service_cards
+    heading: The four parts of organic search
+    intro: Each one has its own page with more detail.
+    parent: organic-search
+  - type: accordion
+    heading: Each service in detail
+    intro: A quick look at what each discipline covers and when you need it.
+    open_first: true
+    items:
+      - title: SEO — Search Engine Optimization
+        body: |-
+          The foundation. Technical health, site architecture, content mapped to real search intent, and internal linking that helps search engines understand what matters.
+
+          **You need it if:** your site isn't getting the organic traffic it should, you're planning a migration or redesign, or you're publishing content that isn't ranking.
+
+          [Read more about SEO →](/services/organic-search/seo/)
+      - title: AEO — Answer Engine Optimization
+        body: |-
+          Structuring content so it becomes *the* answer — featured snippets, "People also ask", voice assistants and AI answers. Clear questions, direct answers, and the right structured data.
+
+          **You need it if:** people search questions in your space and someone else's answer keeps showing up.
+
+          [Read more about AEO →](/services/organic-search/aeo/)
+      - title: GEO — Generative Engine Optimization
+        body: |-
+          Making your brand show up inside AI-generated answers — Google AI Overviews, ChatGPT, Perplexity, Gemini. This is about entities, citations, original information and being the source AI systems trust.
+
+          **You need it if:** you want to know how (or whether) AI tools talk about your brand, and how to change that.
+
+          [Read more about GEO →](/services/organic-search/geo/)
+      - title: Local SEO
+        body: |-
+          Getting found in the map pack and local results. Google Business Profile, consistent NAP data, location pages that say something real, and a review strategy.
+
+          **You need it if:** you serve customers in specific cities or areas, or have multiple locations.
+
+          [Read more about Local SEO →](/services/organic-search/local-seo/)
+  - type: steps
+    heading: How I work
+    items:
+      - title: Understand
+        body: Where the site is today — technical health, content, competitors, and what the business actually needs from organic.
+      - title: Prioritise
+        body: A short, ordered list of what will move the needle first. No 200-row audit spreadsheets nobody reads.
+      - title: Ship
+        body: Working with your dev, design and content teams so changes actually go live.
+      - title: Measure and compound
+        body: Track what moved, double down on what works, and keep the site earning long after launch.
+faq:
+  heading: Organic search FAQs
+  items:
+    - question: Do I need all four — SEO, AEO, GEO and Local SEO?
+      answer: Not always. Every site needs solid SEO foundations. AEO and GEO matter most if people research your category through questions and AI tools. Local SEO matters if you serve specific locations. I'll tell you honestly which ones are worth your time.
+    - question: How is this different from hiring an SEO agency?
+      answer: The disciplines are the same; the difference is focus. I treat organic search as one growth channel tied to business outcomes, rather than separate deliverables and monthly reports.
+    - question: Can you work with my existing team or agency?
+      answer: Yes. A lot of organic work is making sure dev, content and marketing teams are pulling in the same direction.
+form:
+  enabled: true
+  heading: Get help with organic search
+  intro: Tell me about your site and what you want from organic search. I'll reply by email.
+  service_name: Organic Search
+  button_label: Send enquiry

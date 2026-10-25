@@ -1,0 +1,53 @@
+title: About
+seo:
+  meta_title: About Arjun R Sharma | Organic Growth Marketer
+  meta_description: Arjun R Sharma's background in organic growth marketing across FMCG, BFSI, travel, and B2B, and what this site is about.
+  noindex: false
+schema:
+  page_type: AboutPage
+  custom_jsonld: ''
+hero:
+  eyebrow: About
+  heading: Organic growth marketer, based on what actually moved the needle.
+  subheading: ''
+  image: ''
+  image_alt: ''
+sections:
+  - type: text
+    heading: ''
+    body: |-
+      I've spent four years doing agency-side SEO and growth marketing across FMCG, BFSI, Travel, B2B — working inside teams that had to prove organic channel performance against hard revenue numbers, not just rankings.
+
+      I currently lead growth marketing at Jump Content (Dimerse). This site is where I keep a record of the brands I've worked with, and write about the parts of SEO that are actually changing right now — Local SEO, generative engine optimization (GEO), answer engine optimization (AEO), and organic growth strategy more broadly.
+
+      No fluff, no recycled "10 SEO tips" posts — just what I'm seeing work (and not work) in practice, and the projects behind it.
+  - type: timeline
+    heading: Where I've worked, and on what
+    items:
+      - period: 2025 — Present
+        role: Growth Marketing Lead
+        company: Jump Content (Dimerse)
+        body: Leading organic growth marketing across a portfolio of client accounts.
+        clients: CFO Bridge, CFOSME, PSA India, MakeMyTrip, Blooming Orchid
+      - period: '2024'
+        role: SEO Specialist, BFSI
+        company: Puretech
+        body: Focused on banking, financial services, and insurance clients.
+        clients: HDFC Bank, QI Spine, Mirae Asset
+      - period: 2022 — 2024
+        role: SEO Specialist, Southeast Asia
+        company: Performics
+        body: Managed regional SEO across FMCG and consumer portfolios.
+        clients: Mars Petcare, Centrum
+  - type: logos
+    heading: Brands I've worked with
+    items: [Mars Petcare, Pedigree, IAMS, Whiskas, HDFC Bank, MakeMyTrip, Airtel, Mirae Asset, PSA India, CFO Bridge, Centrum, QI Spine]
+  - type: cta
+    heading: Working on something?
+    body: See how I can help, or read what I've been writing lately.
+    button_label: Explore services
+    button_link: /services/
+faq:
+  items: []
+form:
+  enabled: false

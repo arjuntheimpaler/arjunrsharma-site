@@ -1,0 +1,17 @@
+title: Videos
+seo:
+  meta_title: Videos | SEO, GEO & AEO Explainers — Arjun R Sharma
+  meta_description: Video walkthroughs and explainers on SEO, Local SEO, GEO, AEO and organic growth from Arjun R Sharma.
+  noindex: false
+schema:
+  page_type: CollectionPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Videos
+  heading: Walkthroughs and explainers.
+  subheading: Short videos on how search is changing and what to do about it.
+sections: []
+faq:
+  items: []
+form:
+  enabled: false

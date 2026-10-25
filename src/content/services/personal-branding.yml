@@ -1,0 +1,64 @@
+title: Personal Branding
+parent: ''
+order: 2
+draft: false
+card_summary: Own what people find when they search your name — your site, LinkedIn, and how AI tools describe you.
+seo:
+  meta_title: Personal Branding Services | Own Your Name in Search — Arjun R Sharma
+  meta_description: Personal branding help for founders, executives and professionals — own your name in Google and AI search with a personal site, LinkedIn and content strategy.
+  noindex: false
+schema:
+  page_type: WebPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Personal Branding
+  heading: Own what people find when they search your name.
+  subheading: Clients, employers, investors and journalists will search for you. Personal branding makes sure they — and AI tools — find the right story.
+  primary_label: Get help with your brand
+  primary_link: '#enquire'
+sections:
+  - type: text
+    heading: What personal branding means here
+    body: |-
+      This isn't about becoming an influencer. It's about making sure that when someone searches your name, the results are **yours, accurate, and working for you** — your own site, a strong LinkedIn profile, your writing and your expertise.
+
+      It's the same discipline as organic search, applied to a person instead of a company.
+  - type: cards
+    heading: What I help with
+    items:
+      - title: Personal website
+        body: A fast, well-structured site on your own domain that ranks for your name and explains what you do.
+      - title: Name search audit
+        body: What Google and AI tools show for your name today, and what needs to change.
+      - title: LinkedIn presence
+        body: A profile and posting approach that supports how you want to be known.
+      - title: Content & thought leadership
+        body: Writing that builds topical authority and gives people — and AI — something to cite.
+      - title: Entity & schema setup
+        body: Person schema, consistent profiles and the signals that help search engines understand who you are.
+  - type: steps
+    heading: How it works
+    items:
+      - title: Audit
+        body: Search your name across Google and AI tools and see what comes up.
+      - title: Define
+        body: Decide what you want to be known for, and for whom.
+      - title: Build
+        body: Set up the site, profiles and structured data.
+      - title: Grow
+        body: Publish consistently and keep the results moving in the right direction.
+faq:
+  heading: Personal branding FAQs
+  items:
+    - question: Who is personal branding for?
+      answer: Founders, executives, consultants, creators and professionals whose name matters to their next client, job, investor or opportunity.
+    - question: Do I need my own website if I have LinkedIn?
+      answer: It helps a lot. LinkedIn is rented space; a personal site on your own domain is an asset you control and one search engines can clearly connect to you.
+    - question: Can you help me show up in AI answers about me?
+      answer: Yes, that's part of it. Consistent profiles, clear entity information and published expertise make it more likely AI tools describe you accurately.
+form:
+  enabled: true
+  heading: Get help with personal branding
+  intro: Tell me who you are and how you'd like to be known.
+  service_name: Personal Branding
+  button_label: Send enquiry

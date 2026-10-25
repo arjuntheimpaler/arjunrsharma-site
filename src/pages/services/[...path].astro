@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBody from '../../components/PageBody.astro';
+import { getServices, servicePath, plain, SITE } from '../../lib/utils';
+import { serviceNode } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const all = await getServices();
+  return all.map((entry) => ({
+    params: { path: servicePath(entry).replace(/^\/services\/|\/$/g, '') },
+    props: { entry, parent: all.find((p) => p.id === entry.data.parent) ?? null },
+  }));
+}
+const { entry, parent } = Astro.props;
+const page = entry.data;
+const url = new URL(servicePath(entry), SITE).toString();
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services/' },
+  ...(parent ? [{ name: parent.data.title, path: servicePath(parent) }] : []),
+  { name: page.title, path: servicePath(entry) },
+];
+const description = page.seo?.meta_description || page.card_summary || plain(page.hero?.subheading);
+---
+<BaseLayout
+  title={page.title}
+  description={description}
+  seo={page.seo}
+  schema={page.schema}
+  faq={page.faq?.items}
+  image={page.hero?.image}
+  imageAlt={page.hero?.image_alt}
+  crumbs={crumbs}
+  extraNodes={[serviceNode(url, page.title, description)]}
+>
+  <PageBody page={page} fallbackService={page.title} />
+</BaseLayout>

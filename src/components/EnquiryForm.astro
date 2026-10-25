@@ -1,0 +1,37 @@
+---
+import { mdInline } from '../lib/utils';
+const { form, fallbackService = 'General enquiry' } = Astro.props;
+const service = form?.service_name || fallbackService;
+---
+{form?.enabled && (
+  <section class="section form-section" id="enquire">
+    <div class="wrap form-grid">
+      <div>
+        <h2>{form.heading || 'Tell me what you need'}</h2>
+        {form.intro && <p class="section-intro" set:html={mdInline(form.intro)} />}
+      </div>
+      <form
+        name="enquiry"
+        method="POST"
+        action="/thank-you/"
+        data-netlify="true"
+        netlify-honeypot="company_url"
+        class="form"
+      >
+        <input type="hidden" name="form-name" value="enquiry" />
+        <input type="hidden" name="service" value={service} />
+        <p class="hp" aria-hidden="true"><label>Leave this empty <input name="company_url" tabindex="-1" autocomplete="off" /></label></p>
+        <div class="field-row">
+          <label>Name<input name="name" type="text" required autocomplete="name" /></label>
+          <label>Email<input name="email" type="email" required autocomplete="email" /></label>
+        </div>
+        <div class="field-row">
+          <label><span>Phone <span class="opt">(optional)</span></span><input name="phone" type="tel" autocomplete="tel" /></label>
+          <label><span>Website / company <span class="opt">(optional)</span></span><input name="website" type="text" autocomplete="url" /></label>
+        </div>
+        <label>What can I help with?<textarea name="message" rows="5" required></textarea></label>
+        <button class="btn" type="submit">{form.button_label || 'Send enquiry'}</button>
+      </form>
+    </div>
+  </section>
+)}

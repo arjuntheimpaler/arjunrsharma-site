@@ -1,0 +1,57 @@
+title: GEO
+parent: organic-search
+order: 3
+draft: false
+card_summary: Generative Engine Optimization — get your brand cited inside AI Overviews, ChatGPT and other AI answers.
+seo:
+  meta_title: GEO Services | Generative Engine Optimization — Arjun R Sharma
+  meta_description: Generative engine optimization (GEO) help — get your brand understood, trusted and cited in Google AI Overviews, ChatGPT, Perplexity and Gemini.
+  noindex: false
+schema:
+  page_type: WebPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Organic Search · GEO
+  heading: Show up where AI answers the question.
+  subheading: Generative Engine Optimization makes your brand easier for AI systems to understand, trust and cite — in Google AI Overviews, ChatGPT, Perplexity, Gemini and whatever comes next.
+  primary_label: Get GEO help
+  primary_link: '#enquire'
+  secondary_label: Read about GEO and AEO
+  secondary_link: /blog/geo-aeo-what-actually-changes/
+sections:
+  - type: text
+    heading: What is GEO?
+    body: |-
+      **Generative Engine Optimization (GEO)** is the work of making your content and brand the source an AI system pulls from when it generates an answer.
+
+      Traditional SEO optimises to be the link someone clicks. GEO optimises to be the source AI summarises, rephrases or quotes — often without a click at all. You can rank well and still not get cited, and you can get cited without ranking #1.
+  - type: cards
+    heading: What I help with
+    items:
+      - title: AI visibility check
+        body: How ChatGPT, Gemini, Perplexity and AI Overviews currently describe your brand and category — and who they cite instead of you.
+      - title: Entity clarity
+        body: Making it explicit who you are, what you do and how you relate to other known entities — on-site, in schema, and across the web.
+      - title: Original information
+        body: Data, specific cases and expert perspective that AI systems can't get from a hundred other pages.
+      - title: Citation-worthy structure
+        body: Extractable answers, clean headings and pages built so a model can lift the right passage.
+  - type: text
+    heading: What doesn't change
+    body: Technical crawlability, speed and a coherent site structure still matter — AI crawlers have to reach and parse your content first. GEO is additive to SEO, not a replacement for it. And it's still evolving, so treat any GEO advice (including mine) as directional, not gospel.
+    style: tinted
+faq:
+  heading: GEO FAQs
+  items:
+    - question: What's the difference between GEO and AEO?
+      answer: AEO focuses on being the direct answer in search features like snippets and People Also Ask. GEO focuses on being cited and summarised inside AI-generated responses. In practice they overlap heavily.
+    - question: Can you guarantee my brand appears in ChatGPT?
+      answer: No one can guarantee that. What you can do is make your brand clearer, more credible and more citable — which measurably improves your chances.
+    - question: How do you measure GEO?
+      answer: By tracking a set of real prompts across AI tools over time — whether you're mentioned, how you're described, and which sources get cited — alongside referral traffic from AI platforms.
+form:
+  enabled: true
+  heading: Get help with GEO
+  intro: Curious how AI tools talk about your brand? Tell me your brand and category and I'll get back to you.
+  service_name: GEO
+  button_label: Send enquiry

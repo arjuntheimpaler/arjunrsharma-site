@@ -1,0 +1,79 @@
+---
+import { link } from '../lib/utils';
+const { settings, current } = Astro.props;
+const nav: any[] = settings.nav ?? [];
+const cta = settings.header_cta;
+const isActive = (href?: string) => href && href !== '/' && current.startsWith(link(href));
+const caret = `<svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>`;
+---
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label={`${settings.site_name} — home`}>
+      <span class="brand-mark" aria-hidden="true">{(settings.site_name || 'A').charAt(0)}</span>
+      <span class="brand-name">{settings.site_name}</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Main">
+      <ul>
+        {nav.map((item) => (
+          <li class={item.children?.length ? 'has-dd' : ''}>
+            {item.link ? (
+              <a href={link(item.link)} class:list={['nav-link', { active: isActive(item.link) }]}>
+                {item.label}{item.children?.length ? <Fragment set:html={caret} /> : null}
+              </a>
+            ) : (
+              <button type="button" class="nav-link" aria-haspopup="true">{item.label}<Fragment set:html={caret} /></button>
+            )}
+            {item.children?.length > 0 && (
+              <div class="dd">
+                <ul>
+                  {item.children.map((c: any) => (
+                    <li>
+                      <a href={link(c.link)} class="dd-link">
+                        <span class="dd-label">{c.label}</span>
+                        {c.description && <span class="dd-desc">{c.description}</span>}
+                      </a>
+                      {c.children?.length > 0 && (
+                        <ul class="dd-sub">
+                          {c.children.map((g: any) => <li><a href={link(g.link)}>{g.label}</a></li>)}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    {cta?.label && <a class="btn btn-sm header-cta" href={link(cta.link)}>{cta.label}</a>}
+
+    <details class="nav-mobile">
+      <summary aria-label="Open menu"><span></span><span></span><span></span></summary>
+      <div class="mobile-panel">
+        <ul>
+          {nav.map((item) => (
+            <li>
+              {item.link ? <a href={link(item.link)} class="m-top">{item.label}</a> : <span class="m-top">{item.label}</span>}
+              {item.children?.length > 0 && (
+                <ul>
+                  {item.children.map((c: any) => (
+                    <li>
+                      <a href={link(c.link)}>{c.label}</a>
+                      {c.children?.length > 0 && (
+                        <ul>{c.children.map((g: any) => <li><a href={link(g.link)}>{g.label}</a></li>)}</ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+        {cta?.label && <a class="btn" href={link(cta.link)}>{cta.label}</a>}
+      </div>
+    </details>
+  </div>
+</header>

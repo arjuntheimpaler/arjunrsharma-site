@@ -1,0 +1,210 @@
+---
+import { md, mdInline, link, youtubeId, getPosts, getCaseStudies, getVideos, getServices, servicePath } from '../lib/utils';
+import EntryCard from './EntryCard.astro';
+
+const { sections = [] } = Astro.props as { sections?: any[] | null };
+const blocks = sections ?? [];
+
+// Preload whatever dynamic lists the blocks ask for
+const needs = new Set(blocks.map((b) => (b.type === 'latest' ? b.source : b.type)));
+const lists: Record<string, any[]> = {
+  blog: needs.has('blog') ? await getPosts() : [],
+  'case-studies': needs.has('case-studies') ? await getCaseStudies() : [],
+  videos: needs.has('videos') ? await getVideos() : [],
+};
+const services = needs.has('service_cards') ? await getServices() : [];
+---
+{blocks.map((b, i) => {
+  const cls = ['section', `sec-${b.type}`, b.style && b.style !== 'plain' ? `tone-${b.style}` : ''];
+  const id = b.anchor || undefined;
+  switch (b.type) {
+    case 'text':
+      return (
+        <section class:list={cls} id={id}>
+          <div class={b.width === 'wide' ? 'wrap' : 'wrap narrow'}>
+            {b.heading && <h2>{b.heading}</h2>}
+            <div class="prose" set:html={md(b.body)} />
+          </div>
+        </section>
+      );
+    case 'text_image':
+      return (
+        <section class:list={cls} id={id}>
+          <div class:list={['wrap split', { 'split-rev': b.image_side === 'left' }]}>
+            <div>
+              {b.heading && <h2>{b.heading}</h2>}
+              <div class="prose" set:html={md(b.body)} />
+              {b.button_label && <p><a class="btn" href={link(b.button_link)}>{b.button_label}</a></p>}
+            </div>
+            {b.image && <figure><img src={b.image} alt={b.image_alt || b.heading || ''} loading="lazy" /></figure>}
+          </div>
+        </section>
+      );
+    case 'image':
+      return b.image ? (
+        <section class:list={cls} id={id}>
+          <figure class="wrap">
+            <img src={b.image} alt={b.image_alt || b.caption || ''} loading="lazy" />
+            {b.caption && <figcaption>{b.caption}</figcaption>}
+          </figure>
+        </section>
+      ) : null;
+    case 'cards':
+      return (
+        <section class:list={cls} id={id}>
+          <div class="wrap">
+            {b.heading && <h2>{b.heading}</h2>}
+            {b.intro && <p class="section-intro" set:html={mdInline(b.intro)} />}
+            <div class="grid cards">
+              {(b.items ?? []).map((c: any) => (
+                <div class="card">
+                  {c.image && <img class="card-img" src={c.image} alt={c.image_alt || c.title} loading="lazy" />}
+                  <h3>{c.link ? <a href={link(c.link)}>{c.title}</a> : c.title}</h3>
+                  {c.body && <div class="card-text" set:html={md(c.body)} />}
+                  {c.link && c.link_label && <a class="more" href={link(c.link)}>{c.link_label} →</a>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    case 'service_cards': {
+      const parent = (b.parent || '').trim();
+      const items = services.filter((s) => (s.data.parent || '') === parent);
+      return (
+        <section class:list={cls} id={id}>
+          <div class="wrap">
+            {b.heading && <h2>{b.heading}</h2>}
+            {b.intro && <p class="section-intro" set:html={mdInline(b.intro)} />}
+            <div class="grid cards">
+              {items.map((s) => (
+                <a class="card card-link" href={servicePath(s)}>
+                  <h3>{s.data.title}</h3>
+                  {s.data.card_summary && <p>{s.data.card_summary}</p>}
+                  <span class="more">Learn more →</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+    case 'steps':
+      return (
+        <section class:list={cls} id={id}>
+          <div class="wrap">
+            {b.heading && <h2>{b.heading}</h2>}
+            {b.intro && <p class="section-intro" set:html={mdInline(b.intro)} />}
+            <ol class="steps">
+              {(b.items ?? []).map((s: any) => (
+                <li><h3>{s.title}</h3>{s.body && <div set:html={md(s.body)} />}</li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      );
+    case 'accordion':
+      return (
+        <section class:list={cls} id={id}>
+          <div class="wrap narrow">
+            {b.heading && <h2>{b.heading}</h2>}
+            {b.intro && <p class="section-intro" set:html={mdInline(b.intro)} />}
+            <div class="accordion">
+              {(b.items ?? []).map((a: any, j: number) => (
+                <details open={b.open_first && j === 0}>
+                  <summary><h3>{a.title}</h3></summary>
+                  <div class="prose" set:html={md(a.body)} />
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    case 'stats':
+      return (
+        <section class:list={cls} id={id}>
+          <div class="wrap">
+            {b.heading && <h2>{b.heading}</h2>}
+            <dl class="stats">
+              {(b.items ?? []).map((s: any) => <div><dt>{s.label}</dt><dd>{s.value}</dd></div>)}
+            </dl>
+          </div>
+        </section>
+      );
+    case 'logos':
+      return (
+        <section class:list={cls} id={id}>
+          <div class="wrap">
+            {b.heading && <p class="eyebrow center">{b.heading}</p>}
+            <ul class="logos">{(b.items ?? []).map((l: any) => <li>{typeof l === 'string' ? l : l.name}</li>)}</ul>
+          </div>
+        </section>
+      );
+    case 'timeline':
+      return (
+        <section class:list={cls} id={id}>
+          <div class="wrap narrow">
+            {b.heading && <h2>{b.heading}</h2>}
+            <ol class="timeline">
+              {(b.items ?? []).map((t: any) => (
+                <li>
+                  <p class="tl-period">{t.period}</p>
+                  <h3>{t.role}{t.company && <span> · {t.company}</span>}</h3>
+                  {t.body && <div set:html={md(t.body)} />}
+                  {t.clients && <p class="tl-clients"><strong>Clients:</strong>{" "}{t.clients}</p>}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      );
+    case 'video': {
+      const vid = youtubeId(b.youtube_url);
+      return vid ? (
+        <section class:list={cls} id={id}>
+          <div class="wrap narrow">
+            {b.heading && <h2>{b.heading}</h2>}
+            <div class="video"><iframe src={`https://www.youtube-nocookie.com/embed/${vid}`} title={b.heading || 'Video'} loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            {b.caption && <p class="caption">{b.caption}</p>}
+          </div>
+        </section>
+      ) : null;
+    }
+    case 'latest': {
+      const items = (lists[b.source] ?? []).slice(0, b.count || 3);
+      return items.length ? (
+        <section class:list={cls} id={id}>
+          <div class="wrap">
+            <div class="section-head">
+              {b.heading && <h2>{b.heading}</h2>}
+              {b.link_label && <a class="more" href={`/${b.source}/`}>{b.link_label} →</a>}
+            </div>
+            <div class:list={['grid', b.source === 'blog' ? 'entries-list' : 'cards']}>
+              {items.map((e) => <EntryCard entry={e} kind={b.source} />)}
+            </div>
+          </div>
+        </section>
+      ) : null;
+    }
+    case 'cta':
+      return (
+        <section class:list={[...cls, 'cta-section']} id={id}>
+          <div class="wrap">
+            <div class="cta-box">
+              {b.heading && <h2>{b.heading}</h2>}
+              {b.body && <div set:html={md(b.body)} />}
+              {b.button_label && <a class="btn btn-light" href={link(b.button_link)}>{b.button_label}</a>}
+            </div>
+          </div>
+        </section>
+      );
+    case 'html':
+      return (
+        <section class:list={cls} id={id}>
+          <div class="wrap" set:html={b.code} />
+        </section>
+      );
+    default:
+      return null;
+  }
+})}

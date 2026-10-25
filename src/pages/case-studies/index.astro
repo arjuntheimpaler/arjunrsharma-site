@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBody from '../../components/PageBody.astro';
+import Sections from '../../components/Sections.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { getPage, getCaseStudies } from '../../lib/utils';
+const page = await getPage('case-studies');
+const items = await getCaseStudies();
+---
+<BaseLayout title={page.title} seo={page.seo} schema={page.schema} faq={page.faq?.items} image={page.hero?.image} imageAlt={page.hero?.image_alt} pageType="CollectionPage" crumbs={[{ name: 'Home', path: '/' }, { name: page.title, path: '/case-studies/' }]}>
+  <PageBody page={{ ...page, sections: null }} compact>
+    <section class="section">
+      <div class="wrap">
+        {items.length ? (
+          <div class="grid cards">{items.map((e) => <EntryCard entry={e} kind="case-studies" />)}</div>
+        ) : (
+          <p class="empty">Detailed case studies are being written up. In the meantime, here's where I've worked.</p>
+        )}
+      </div>
+    </section>
+    <Sections sections={page.sections} />
+  </PageBody>
+</BaseLayout>

@@ -1,0 +1,17 @@
+title: Blog
+seo:
+  meta_title: Blog | SEO, Local SEO, GEO & AEO — Arjun R Sharma
+  meta_description: Posts on SEO, Local SEO, GEO, AEO, and organic growth marketing from Arjun R Sharma.
+  noindex: false
+schema:
+  page_type: CollectionPage
+  custom_jsonld: ''
+hero:
+  eyebrow: Blog
+  heading: SEO, Local SEO, GEO, and AEO.
+  subheading: Organic growth marketing, website management, and what's changing as search shifts toward AI-generated answers.
+sections: []
+faq:
+  items: []
+form:
+  enabled: false

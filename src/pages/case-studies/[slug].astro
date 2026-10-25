@@ -1,0 +1,51 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EntryArticle from '../../components/EntryArticle.astro';
+import { getCaseStudies, SITE, abs } from '../../lib/utils';
+import { videoNode } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  return (await getCaseStudies()).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const url = new URL(`/case-studies/${entry.id}/`, SITE).toString();
+const video = d.youtube_url ? videoNode({ url, name: d.title, description: d.summary, youtube: d.youtube_url, uploadDate: d.pubDate }) : undefined;
+const article = {
+  '@type': 'Article',
+  '@id': `${url}#article`,
+  headline: d.title,
+  description: d.summary,
+  datePublished: d.pubDate.toISOString(),
+  author: { '@id': `${SITE}/#person` },
+  publisher: { '@id': `${SITE}/#person` },
+  mainEntityOfPage: { '@id': `${url}#webpage` },
+  image: abs(d.hero_image),
+  about: d.services?.length ? d.services.map((s: string) => ({ '@type': 'Thing', name: s })) : undefined,
+  video: video ? { '@id': video['@id'] } : undefined,
+};
+const facts = [d.industry && `Industry: ${d.industry}`, d.duration && `Duration: ${d.duration}`, d.services?.length && `Services: ${d.services.join(', ')}`].filter(Boolean).join(' · ');
+---
+<BaseLayout
+  title={d.title}
+  description={d.summary}
+  seo={d.seo}
+  schema={{ ...d.schema, page_type: null }}
+  faq={d.faq?.items}
+  image={d.hero_image}
+  imageAlt={d.hero_image_alt}
+  ogType="article"
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'Case Studies', path: '/case-studies/' }, { name: d.title, path: `/case-studies/${entry.id}/` }]}
+  extraNodes={[article, video]}
+>
+  <EntryArticle data={d} eyebrow={d.client_label} meta={facts}>
+    {d.results?.length > 0 && (
+      <dl class="stats stats-inline" slot="before">
+        {d.results.map((r: any) => <div><dt>{r.metric}</dt><dd>{r.value}</dd></div>)}
+      </dl>
+    )}
+    <Content />
+  </EntryArticle>
+</BaseLayout>

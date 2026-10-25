@@ -1,0 +1,24 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Old Work page now lives at Case Studies
+[[redirects]]
+  from = "/work"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/work/"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

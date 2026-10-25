@@ -1,0 +1,19 @@
+title: Thank you
+seo:
+  meta_title: Thanks — message received
+  noindex: true
+schema:
+  page_type: WebPage
+hero:
+  eyebrow: Message received
+  heading: Thanks, I've got your message.
+  subheading: I'll get back to you by email. In the meantime, here's some reading.
+  primary_label: Read the blog
+  primary_link: /blog/
+  secondary_label: Back to home
+  secondary_link: /
+sections: []
+faq:
+  items: []
+form:
+  enabled: false

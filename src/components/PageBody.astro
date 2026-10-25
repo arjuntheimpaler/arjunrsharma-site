@@ -1,0 +1,12 @@
+---
+import Hero from './Hero.astro';
+import Sections from './Sections.astro';
+import Faq from './Faq.astro';
+import EnquiryForm from './EnquiryForm.astro';
+const { page, compact = false, fallbackService } = Astro.props;
+---
+<Hero hero={page.hero} fallbackTitle={page.title} compact={compact} />
+<Sections sections={page.sections} />
+<slot />
+<Faq faq={page.faq} />
+<EnquiryForm form={page.form} fallbackService={fallbackService || page.title} />

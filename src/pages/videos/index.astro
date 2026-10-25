@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBody from '../../components/PageBody.astro';
+import Sections from '../../components/Sections.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { getPage, getVideos } from '../../lib/utils';
+const page = await getPage('videos');
+const items = await getVideos();
+---
+<BaseLayout title={page.title} seo={page.seo} schema={page.schema} faq={page.faq?.items} image={page.hero?.image} imageAlt={page.hero?.image_alt} pageType="CollectionPage" crumbs={[{ name: 'Home', path: '/' }, { name: page.title, path: '/videos/' }]}>
+  <PageBody page={{ ...page, sections: null }} compact>
+    <section class="section">
+      <div class="wrap">
+        {items.length ? (
+          <div class="grid cards">{items.map((e) => <EntryCard entry={e} kind="videos" />)}</div>
+        ) : (
+          <p class="empty">Videos are coming soon.</p>
+        )}
+      </div>
+    </section>
+    <Sections sections={page.sections} />
+  </PageBody>
+</BaseLayout>

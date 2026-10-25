@@ -1,0 +1,93 @@
+site_name: Arjun R Sharma
+tagline: Arjun R Sharma is an organic growth marketer working across FMCG, BFSI, travel, and B2B. Portfolio and writing on SEO, Local SEO, generative engine optimization (GEO), and answer engine optimization (AEO).
+email: arjunrsharma31@gmail.com
+linkedin: https://www.linkedin.com/in/arjunrsharma
+google_site_verification: vnRU9CmbHXqQPViZrJZesFhpOHPWnsXDblxAXGySPe8
+ga4_id: ''
+head_code: ''
+default_og_image: /og-default.png
+default_og_image_alt: Arjun R Sharma, organic growth marketer
+person:
+  name: Arjun R Sharma
+  job_title: Organic Growth Marketer
+  description: Organic growth marketer with four years of agency-side SEO and growth marketing across FMCG, BFSI, travel and B2B.
+  works_for: Jump Content (Dimerse)
+  image: ''
+  image_alt: ''
+  knows_about:
+    - Search Engine Optimization
+    - Local SEO
+    - Generative Engine Optimization
+    - Answer Engine Optimization
+    - Organic Growth Marketing
+    - Personal Branding
+  same_as: []
+header_cta:
+  label: Get in touch
+  link: /contact/
+nav:
+  - label: About
+    link: /about/
+  - label: Services
+    link: /services/
+    children:
+      - label: Organic Search
+        link: /services/organic-search/
+        description: SEO, AEO, GEO and Local SEO that compounds.
+        children:
+          - label: SEO
+            link: /services/organic-search/seo/
+          - label: AEO
+            link: /services/organic-search/aeo/
+          - label: GEO
+            link: /services/organic-search/geo/
+          - label: Local SEO
+            link: /services/organic-search/local-seo/
+      - label: Personal Branding
+        link: /services/personal-branding/
+        description: Get found, and trusted, when people search your name.
+  - label: Resources
+    link: ''
+    children:
+      - label: Blog
+        link: /blog/
+        description: Writing on SEO, GEO, AEO and organic growth.
+      - label: Case Studies
+        link: /case-studies/
+        description: Work I've done and what it moved.
+      - label: Videos
+        link: /videos/
+        description: Walkthroughs and explainers.
+  - label: FAQ
+    link: /faq/
+  - label: Contact
+    link: /contact/
+footer:
+  blurb: Organic growth marketer & writer. SEO, Local SEO, GEO and AEO for brands that want traffic that lasts.
+  copyright: Arjun R Sharma. All rights reserved.
+  columns:
+    - heading: Services
+      links:
+        - { label: Organic Search, link: /services/organic-search/ }
+        - { label: SEO, link: /services/organic-search/seo/ }
+        - { label: AEO, link: /services/organic-search/aeo/ }
+        - { label: GEO, link: /services/organic-search/geo/ }
+        - { label: Local SEO, link: /services/organic-search/local-seo/ }
+        - { label: Personal Branding, link: /services/personal-branding/ }
+    - heading: Resources
+      links:
+        - { label: Blog, link: /blog/ }
+        - { label: Case Studies, link: /case-studies/ }
+        - { label: Videos, link: /videos/ }
+        - { label: FAQ, link: /faq/ }
+    - heading: Elsewhere
+      links:
+        - { label: About, link: /about/ }
+        - { label: Contact, link: /contact/ }
+        - { label: LinkedIn, link: 'https://www.linkedin.com/in/arjunrsharma' }
+        - { label: RSS, link: /rss.xml }
+article_cta:
+  heading: Want this kind of thinking on your site?
+  body: I help brands build organic traffic that compounds, across SEO, AEO, GEO and Local SEO.
+  button_label: See how I can help
+  button_link: /services/organic-search/

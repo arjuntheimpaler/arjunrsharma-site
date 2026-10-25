@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBody from '../../components/PageBody.astro';
+import Sections from '../../components/Sections.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { getPage, getPosts } from '../../lib/utils';
+const page = await getPage('blog');
+const items = await getPosts();
+---
+<BaseLayout title={page.title} seo={page.seo} schema={page.schema} faq={page.faq?.items} image={page.hero?.image} imageAlt={page.hero?.image_alt} pageType="CollectionPage" crumbs={[{ name: 'Home', path: '/' }, { name: page.title, path: '/blog/' }]}>
+  <PageBody page={{ ...page, sections: null }} compact>
+    <section class="section">
+      <div class="wrap">
+        {items.length ? (
+          <div class="grid entries-list">{items.map((e) => <EntryCard entry={e} kind="blog" />)}</div>
+        ) : (
+          <p class="empty">New posts are on the way.</p>
+        )}
+      </div>
+    </section>
+    <Sections sections={page.sections} />
+  </PageBody>
+</BaseLayout>

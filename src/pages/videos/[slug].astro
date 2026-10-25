@@ -1,0 +1,33 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EntryArticle from '../../components/EntryArticle.astro';
+import { getVideos, formatDate, SITE, youtubeId, youtubeThumb } from '../../lib/utils';
+import { videoNode } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  return (await getVideos()).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const url = new URL(`/videos/${entry.id}/`, SITE).toString();
+const vid = youtubeId(d.youtube_url);
+const thumb = d.thumbnail || (vid ? youtubeThumb(vid) : undefined);
+const video = videoNode({ url, name: d.title, description: d.description, youtube: d.youtube_url, uploadDate: d.pubDate, duration: d.duration, thumbnail: thumb });
+const meta = `<time datetime="${d.pubDate.toISOString()}">${formatDate(d.pubDate)}</time>${d.duration ? ` · ${d.duration}` : ''}`;
+---
+<BaseLayout
+  title={d.title}
+  description={d.description}
+  seo={d.seo}
+  schema={d.schema}
+  faq={d.faq?.items}
+  image={thumb}
+  imageAlt={d.thumbnail_alt || d.title}
+  ogType="video.other"
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'Videos', path: '/videos/' }, { name: d.title, path: `/videos/${entry.id}/` }]}
+  extraNodes={[video]}
+>
+  <EntryArticle data={{ ...d, hero_image: null }} meta={meta}><Content /></EntryArticle>
+</BaseLayout>

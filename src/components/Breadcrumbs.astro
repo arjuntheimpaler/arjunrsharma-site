@@ -1,0 +1,13 @@
+---
+import { link } from '../lib/utils';
+const { crumbs } = Astro.props as { crumbs: { name: string; path: string }[] };
+---
+<nav class="wrap crumbs" aria-label="Breadcrumb">
+  <ol>
+    {crumbs.map((c, i) => (
+      <li>
+        {i < crumbs.length - 1 ? <a href={link(c.path)}>{c.name}</a> : <span aria-current="page">{c.name}</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
