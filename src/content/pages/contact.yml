@@ -1,21 +1,18 @@
 title: Contact
-seo:
-  meta_title: Contact Arjun R Sharma
-  meta_description: Get in touch with Arjun R Sharma about SEO, GEO, AEO, Local SEO or personal branding.
-  noindex: false
-schema:
-  page_type: ContactPage
-  custom_jsonld: ''
 hero:
   eyebrow: Contact
   heading: Say hi.
   subheading: Whether it's about something I wrote, a project you think I'd find interesting, or just to connect — email is the best way to reach me. Or use the form below.
+  image: ''
+  image_alt: ''
   primary_label: arjunrsharma31@gmail.com
   primary_link: mailto:arjunrsharma31@gmail.com?subject=Hey%20Arjun
   secondary_label: LinkedIn
-  secondary_link: https://www.linkedin.com/in/arjunrsharma
+  secondary_link: https://www.linkedin.com/in/arjunrsharma31
 sections: []
 faq:
+  heading: ''
+  intro: ''
   items: []
 form:
   enabled: true
@@ -23,3 +20,15 @@ form:
   intro: Tell me what you're working on. I read everything.
   service_name: Contact page
   button_label: Send message
+seo:
+  meta_title: Contact Arjun R Sharma
+  meta_description: Get in touch with Arjun R Sharma about SEO, GEO, AEO, Local SEO or personal branding.
+  canonical: ''
+  noindex: false
+  og_title: ''
+  og_description: ''
+  og_image: ''
+  og_image_alt: ''
+schema:
+  page_type: ContactPage
+  custom_jsonld: ''
