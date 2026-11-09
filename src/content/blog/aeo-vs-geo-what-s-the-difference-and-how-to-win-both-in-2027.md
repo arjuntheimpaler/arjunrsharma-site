@@ -31,7 +31,7 @@ faq:
     - question: Should I block AI crawlers?
       answer: Only if you have a clear reason. Blocking training bots is a policy choice, but blocking search-time agents removes you from those engines' answers.
 featured: false
-draft: true
+draft: false
 seo:
   meta_title: 'AEO vs GEO: Differences, Tactics & Metrics (2027 Guide)'
   meta_description: AEO wins the direct answer; GEO wins AI citations. Learn the differences, 2026 data, tactics for AI Overviews and ChatGPT, 2027 trends and a Q1 plan.
