@@ -5,12 +5,12 @@ pubDate: 2026-11-14
 updatedDate: ''
 tags:
   - SEO
-hero_image: ''
+hero_image: /images/uploads/pasted-image-1794851773936.webp
 hero_image_alt: ''
 youtube_url: ''
 faq: null
 featured: false
-draft: true
+draft: false
 seo: null
 schema: null
 ---
