@@ -9,7 +9,7 @@ hero_image: /images/uploads/pasted-image-1794851773936.webp
 hero_image_alt: ''
 youtube_url: ''
 faq: null
-featured: false
+featured: true
 draft: false
 seo: null
 schema: null
