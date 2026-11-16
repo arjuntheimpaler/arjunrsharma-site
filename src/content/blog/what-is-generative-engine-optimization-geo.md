@@ -10,7 +10,7 @@ hero_image_alt: ''
 youtube_url: ''
 faq: null
 featured: false
-draft: true
+draft: false
 seo: null
 schema: null
 ---
