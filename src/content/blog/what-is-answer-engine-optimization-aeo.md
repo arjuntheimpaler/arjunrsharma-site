@@ -5,7 +5,7 @@ pubDate: 2026-11-13
 updatedDate: ''
 tags:
   - AEO
-hero_image: ''
+hero_image: /images/uploads/pasted-image-1794895679761.webp
 hero_image_alt: ''
 youtube_url: ''
 faq: null
