@@ -1,8 +1,8 @@
 ---
 title: What Is SEO and How Does It Actually Work for Service Businesses?
 description: A plain-English explanation of how search engines decide who to show, and what a service business can do to earn that spot.
-pubDate: 2026-11-14
-updatedDate: ''
+pubDate: 2026-11-17
+updatedDate: 2026-11-17
 tags:
   - SEO
 hero_image: /images/uploads/pasted-image-1794851773936.webp
