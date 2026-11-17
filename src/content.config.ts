@@ -4,7 +4,7 @@ import { glob } from 'astro/loaders';
 // Lenient helpers: the editor can leave any optional field empty without breaking the build.
 const str = () => z.string().nullish();
 const bool = () => z.boolean().nullish();
-const date = () => z.coerce.date().nullish();
+const date = () => z.preprocess((v) => (v === '' ? null : v), z.coerce.date().nullish());
 
 const seo = z
   .object({
