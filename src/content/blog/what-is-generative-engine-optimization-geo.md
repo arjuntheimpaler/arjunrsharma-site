@@ -2,10 +2,10 @@
 title: What Is Generative Engine Optimization (GEO)?
 description: GEO is about earning mentions and citations in answers written by AI tools like ChatGPT, Gemini and Perplexity.
 pubDate: 2026-11-12
-updatedDate: ''
+updatedDate: 2026-11-17
 tags:
   - GEO
-hero_image: ''
+hero_image: /images/uploads/pasted-image-1794895765728.webp
 hero_image_alt: ''
 youtube_url: ''
 faq: null
