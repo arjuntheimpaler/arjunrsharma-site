@@ -2,7 +2,7 @@
 title: What Is Answer Engine Optimization (AEO)?
 description: AEO is the practice of structuring your content so search engines, assistants and AI tools can pull your answer directly.
 pubDate: 2026-11-13
-updatedDate: ''
+updatedDate: 2026-11-17
 tags:
   - AEO
 hero_image: /images/uploads/pasted-image-1794895679761.webp
@@ -10,7 +10,7 @@ hero_image_alt: ''
 youtube_url: ''
 faq: null
 featured: false
-draft: true
+draft: false
 seo: null
 schema: null
 ---
