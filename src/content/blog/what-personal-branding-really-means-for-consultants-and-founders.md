@@ -2,7 +2,7 @@
 title: What Personal Branding Really Means for Consultants and Founders
 description: Personal branding is not self-promotion. It is the reputation that makes the right clients choose you before they speak to you.
 pubDate: 2026-11-10
-updatedDate: ''
+updatedDate: 2026-11-18
 tags:
   - Personal Branding
 hero_image: ''
@@ -10,7 +10,7 @@ hero_image_alt: ''
 youtube_url: ''
 faq: null
 featured: false
-draft: true
+draft: false
 seo: null
 schema: null
 ---
