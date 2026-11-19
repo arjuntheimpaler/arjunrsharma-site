@@ -2,7 +2,7 @@
 title: 'How to Do Keyword Research for a Service Business: A Step-by-Step Guide'
 description: A practical process for finding the search terms that bring in paying clients, not just traffic.
 pubDate: 2026-11-09
-updatedDate: ''
+updatedDate: 2026-11-19
 tags:
   - SEO
 hero_image: ''
@@ -10,7 +10,7 @@ hero_image_alt: ''
 youtube_url: ''
 faq: null
 featured: false
-draft: true
+draft: false
 seo: null
 schema: null
 ---
